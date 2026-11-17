@@ -1,0 +1,10 @@
+__pycache__/
+.venv/
+.env
+data/raw/*
+data/interim/*
+data/processed/*
+!data/**/.gitkeep
+model_artifacts/*
+*.pkl
+*.joblib
