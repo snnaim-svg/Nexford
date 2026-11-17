@@ -2,6 +2,8 @@
 
 Course project: investigate late delivery and customer experience using the public Olist Brazilian E-Commerce dataset.
 
+**GitHub project folder:** https://github.com/snnaim-svg/Nexford/tree/main/olist-delivery-analytics
+
 ## Scope
 The project measures delivery performance and reviews, examines segment patterns, and may evaluate a late-delivery model. Outputs support human investigation only; they do not make seller, customer, or carrier decisions.
 
@@ -12,6 +14,3 @@ The project measures delivery performance and reviews, examines segment patterns
 
 ## Data and privacy
 Raw and interim files are excluded from Git. Do not upload credentials or row-level data. Aggregate results and disclose limitations.
-
-## Repository status
-Local repository initialized. GitHub remote URL is pending connection to a GitHub account.
