@@ -16,7 +16,7 @@ orders ─┬─ customers (state → macroregion)
               ↓ ≥100-order cell suppression → CSV aggregate feed
 ```
 
-The final feed contains month, broad regions, category, order count, late rate, mean delay days, low-review share, review coverage. Frequency is a one-time batch over historical data; rerunning is idempotent at the output level. No row-level identifiers or comment text are published.
+The final feed contains month, broad regions, category, aggregation level, order count, late rate, mean delay days, low-review share, and review coverage. Segments under 100 orders are pooled into one clearly labeled residual aggregate, preserving total eligible-order reconciliation without exposing small cells. Frequency is a one-time batch over historical data; rerunning is idempotent at the output level. No row-level identifiers or comment text are published.
 
 ## Data quality and transformations
 Deduplicate primary keys; enforce many-to-one joins; parse timestamps in UTC; retain delivered orders with actual and estimated delivery dates; define late as actual delivery after estimate; define low review as score ≤2. Missing reviews remain missing and are excluded from the low-review denominator; report review coverage. Unknown category/state are retained as “Unknown”. Aggregate and suppress segments below 100 orders. Public dataset lacks demographics, so regional representation checks are operational coverage checks, not protected-group fairness tests.

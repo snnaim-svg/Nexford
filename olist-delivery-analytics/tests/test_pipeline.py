@@ -15,7 +15,10 @@ def test_segment_metrics_and_suppression():
     out = calculate_delivery_kpis(orders)
     assert out.iloc[0].late_rate == .25
     assert len(suppress_small_cells(out, 100)) == 1
-    assert len(suppress_small_cells(out, 101)) == 0
+    pooled = suppress_small_cells(out, 101)
+    assert len(pooled) == 1
+    assert pooled.iloc[0].order_count == 100
+    assert pooled.iloc[0].aggregation_level == "Pooled small cells"
 
 def test_representation_check_flags_review_coverage_gap():
     data = pd.DataFrame({"order_id":[str(i) for i in range(200)],
