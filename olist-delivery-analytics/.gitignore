@@ -1,10 +1,16 @@
 __pycache__/
 .venv/
 .env
+.pipeline-build/
+.prefect-run/
 data/raw/*
 data/interim/*
 data/processed/*
 !data/**/.gitkeep
+reports/privacy_audit.jsonl
+reports/representation_bias_checks.csv
+reports/ge_validation_summary.json
 model_artifacts/*
 *.pkl
 *.joblib
+*.pptx.inspect.ndjson

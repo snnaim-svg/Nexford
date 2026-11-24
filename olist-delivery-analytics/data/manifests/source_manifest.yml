@@ -1,7 +1,11 @@
-# Source manifest
-source: https://www.kaggle.com/olistbr/brazilian-ecommerce
-download_date:
-license_review: pending
+source: https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
+provider: Olist
+download_date: 2026-11-24
+format: CSV
+period: 2016-2018 historical snapshot
+license: CC BY-NC-SA 4.0 as displayed by Kaggle
+license_review: reviewed for non-commercial educational use with attribution; raw data excluded from this repository; derivatives retain attribution and license terms
+frequency: one-time snapshot, batch processing
 files:
   - olist_orders_dataset.csv
   - olist_order_items_dataset.csv
@@ -9,5 +13,7 @@ files:
   - olist_sellers_dataset.csv
   - olist_customers_dataset.csv
   - olist_order_reviews_dataset.csv
+  - product_category_name_translation.csv
+excluded_available_files:
   - olist_order_payments_dataset.csv
   - olist_geolocation_dataset.csv
