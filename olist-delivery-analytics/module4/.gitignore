@@ -1,0 +1,8 @@
+mlflow.db
+smoke.db
+mlruns/
+reports/rendered/
+docs/rendered/
+__pycache__/
+*.pyc
+!model_artifacts/delivery_risk_model.joblib

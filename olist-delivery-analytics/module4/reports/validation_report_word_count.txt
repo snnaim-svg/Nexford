@@ -1,0 +1,1 @@
+Approximate report body word count including section headings but excluding references, tables, title page, and captions: 2027

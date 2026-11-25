@@ -1,0 +1,123 @@
+{
+  "rows_total": 96470,
+  "train_rows": 77176,
+  "test_rows": 19294,
+  "train_period_start": "2016-09-15 12:16:38+00:00",
+  "train_period_end": "2018-05-26 18:16:57+00:00",
+  "test_period_start": "2018-05-26 18:18:03+00:00",
+  "test_period_end": "2018-08-29 15:00:37+00:00",
+  "target_late_rate": 0.08112366538820359,
+  "test_target_late_rate": 0.05291800559759511,
+  "baseline_majority": {
+    "accuracy": 0.9470819944024049,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "roc_auc": 0.5,
+    "pr_auc": 0.05291800559759511
+  },
+  "best_logistic_C": 0.3,
+  "models": {
+    "Logistic Regression": {
+      "accuracy": 0.9020939152068,
+      "precision": 0.08188824662813102,
+      "recall": 0.0832517140058766,
+      "f1": 0.0825643516270034,
+      "roc_auc": 0.7068086357884845,
+      "pr_auc": 0.09312723733804047
+    },
+    "Random Forest": {
+      "accuracy": 0.9183165751010677,
+      "precision": 0.058823529411764705,
+      "recall": 0.03623898139079334,
+      "f1": 0.044848484848484846,
+      "roc_auc": 0.6403262564780232,
+      "pr_auc": 0.07409846072664346
+    }
+  },
+  "selection_rule": "Logistic Regression selected using training-only 3-fold CV average precision; later chronological hold-out is reserved for evaluation.",
+  "selected_model": "Logistic Regression",
+  "threshold": 0.5,
+  "confusion_matrix": [
+    [
+      17320,
+      953
+    ],
+    [
+      936,
+      85
+    ]
+  ],
+  "fairness_summary": {
+    "regional_demographic_parity_difference": 0.4652464313152952,
+    "regional_disparate_impact_ratio": 0.018576101222962767,
+    "regional_equalized_odds_gap": 0.6334153341533415,
+    "interpretation": "Operational-region diagnostic only; dataset contains no protected demographic attributes."
+  },
+  "counterfactual_scenario": {
+    "initial_risk": 0.2927815393593766,
+    "result": "No threshold-crossing scenario found in tested range",
+    "caveat": "Perturbation is descriptive, not causal or actionable."
+  },
+  "fairness_groups": [
+    {
+      "region": "Central-West",
+      "n": 1102,
+      "actual_late_rate": 0.04083484573502722,
+      "predicted_positive_rate": 0.019056261343012703,
+      "tpr": 0.08888888888888889,
+      "fpr": 0.01608325449385052,
+      "predicted_rate_gap_vs_min": 0.010250214524197117
+    },
+    {
+      "region": "North",
+      "n": 313,
+      "actual_late_rate": 0.02875399361022364,
+      "predicted_positive_rate": 0.12140575079872204,
+      "tpr": 0.1111111111111111,
+      "fpr": 0.12171052631578948,
+      "predicted_rate_gap_vs_min": 0.11259970397990646
+    },
+    {
+      "region": "Northeast",
+      "n": 1715,
+      "actual_late_rate": 0.052478134110787174,
+      "predicted_positive_rate": 0.4740524781341108,
+      "tpr": 0.6555555555555556,
+      "fpr": 0.464,
+      "predicted_rate_gap_vs_min": 0.4652464313152952
+    },
+    {
+      "region": "South",
+      "n": 2537,
+      "actual_late_rate": 0.025226645644461962,
+      "predicted_positive_rate": 0.018131651556957035,
+      "tpr": 0.046875,
+      "fpr": 0.017387788111605337,
+      "predicted_rate_gap_vs_min": 0.009325604738141448
+    },
+    {
+      "region": "Southeast",
+      "n": 13627,
+      "actual_late_rate": 0.0596609671974756,
+      "predicted_positive_rate": 0.008806046818815586,
+      "tpr": 0.02214022140221402,
+      "fpr": 0.007960043702200718,
+      "predicted_rate_gap_vs_min": 0.0
+    }
+  ],
+  "leakage_controls": [
+    "Prediction inputs are restricted to checkout-time basket, planned lead time, regions, category, and purchase calendar fields.",
+    "Actual delivery timestamp is used only to form the retrospective target.",
+    "Order/customer/seller identifiers, reviews, order status, and post-purchase fields are excluded.",
+    "Chronological hold-out: later 20% of eligible orders by purchase timestamp."
+  ],
+  "mlflow": {
+    "tracking_uri": "SQLite backend in module4/mlflow.db; artifacts in module4/mlruns",
+    "experiment": "Olist Delivery Risk \u2014 Module 4",
+    "run_id": "3a09f8478e8e4b4cb26db0dd5544da74",
+    "registered_model": "OlistDeliveryRisk",
+    "model_version": 1,
+    "stage": "Staging"
+  }
+}
